@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Leonard Anthony C. Quijada | Digital Business Card</title>
+<meta name="description" content="Quijada Dental Clinic — gentle, modern dental care in Dauis, Bohol. View clinic hours, book an appointment, call or save our contact.">
+<meta name="theme-color" content="#0e7490">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<script>
+/* ==========================================================================
+   1) YOUR INFORMATION: EDIT ONLY THIS BLOCK
+   ========================================================================== */
+const PROFILE = {
+  name:   "Leonard Anthony C. Quijada",
+  first:  "Leonard Anthony",
+  last:   "Quijada",
+  title:  "Dental Clinic",
+  org:    "Quijada Dental Clinic",
+  location: "Dauis, Bohol, Philippines",
+  bio:    "Gentle, modern dental care for the whole family. Cleanings, fillings, braces & more. New patients welcome!",
+
+  phoneRaw:     "+639949782217",
+  phoneDisplay: "+63 994 978 2217",
+
+  email:   "quijadaleonardanthony1@gmail.com",
+  website: "https://toniatsoi.github.io//portfolio/index.html",
+
+  photo: "photo.png",
+
+  // Clinic schedule: 24h "HH:MM", null = closed. Day 0 = Sunday ... 6 = Saturday
+  hours: {
+    0: null,                 // Sunday
+    1: ["09:00","17:00"],    // Monday
+    2: ["09:00","17:00"],
+    3: ["09:00","17:00"],
+    4: ["09:00","17:00"],
+    5: ["09:00","17:00"],
+    6: ["09:00","14:00"]     // Saturday (half day)
+  },
+
+  services: [
+    ["fa-teeth","Cleaning & Oral Prophylaxis"],
+    ["fa-tooth","Tooth Fillings"],
+    ["fa-face-smile","Teeth Whitening"],
+    ["fa-align-left","Braces & Orthodontics"],
+    ["fa-xmark","Tooth Extraction"],
+    ["fa-baby","Pediatric Dentistry"],
+    ["fa-x-ray","X-Ray & Checkup"],
+    ["fa-teeth-open","Dentures & Crowns"]
+  ],
+
+  socials: {
+    facebook:  "https://www.facebook.com/leonardanthony.quijada.31",
+    instagram: "",
+    linkedin:  "",
+    github:    "",
+    tiktok:    "",
+    youtube:   ""
+  }
+};
+/* ========================================================================== */
+</script>
+
+<style>
+:root{
+  --ink:#123a44; --muted:#5b7f88; --paper:#ffffff; --line:#d8eef2;
+  --deep:#0e7490; --deep2:#0891b2; --accent:#22c1dd; --accent-soft:#e0f7fb; --accent-ink:#0b3d49;
+  --open:#0d9488; --closed:#e11d48;
+  --bg1:#eafcff; --bg2:#ffffff;
+  --shadow:0 18px 40px -18px rgba(14,116,144,.35);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --ink:#eafcff; --muted:#9cc3cc; --paper:#0f2a33; --line:#1d4552; --bg1:#08222b; --bg2:#0d2f3a; --shadow:0 18px 40px -18px #000; }
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color:var(--ink); min-height:100vh; overflow-x:hidden; line-height:1.5;
+  padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+  background:
+    radial-gradient(circle at 1px 1px, rgba(34,193,221,.16) 1px, transparent 0) 0 0/26px 26px,
+    linear-gradient(160deg,var(--bg1),var(--bg2));
+  display:flex; justify-content:center; padding-left:16px; padding-right:16px;
+}
+.card{
+  width:100%; max-width:440px; margin:20px 0 28px; background:var(--paper);
+  border-radius:28px; box-shadow:var(--shadow); overflow:hidden;
+  border:1px solid var(--line);
+  animation:rise .6s ease both;
+}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* Header */
+.hero{height:120px;position:relative;background:linear-gradient(150deg,var(--deep),var(--deep2));}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 12% 90%,rgba(255,255,255,.20) 26px,transparent 27px),
+    radial-gradient(circle at 32% 20%,rgba(255,255,255,.14) 18px,transparent 19px),
+    radial-gradient(circle at 85% 25%,rgba(34,193,221,.45),transparent 55%);
+}
+.hero::after{
+  content:"";position:absolute;left:-10%;right:-10%;bottom:-1px;height:34px;
+  background:var(--paper);border-radius:50% 50% 0 0/100% 100% 0 0;
+}
+.profile{text-align:center;padding:0 22px 8px;margin-top:-62px;position:relative;z-index:1}
+.avatar{
+  width:124px;height:124px;border-radius:50%;margin:0 auto 14px;border:5px solid var(--paper);
+  background:linear-gradient(150deg,var(--accent),var(--deep2));color:#fff;display:grid;place-items:center;
+  font-size:2.4rem;font-weight:800;overflow:hidden;box-shadow:0 10px 24px -10px rgba(14,116,144,.6);
+}
+.avatar img{width:100%;height:100%;object-fit:cover}
+h1{font-size:1.6rem;line-height:1.2;letter-spacing:-.01em}
+.title{
+  display:inline-block;color:#fff;font-weight:700;margin-top:10px;
+  background:linear-gradient(120deg,var(--deep2),var(--accent));padding:6px 18px;border-radius:999px;
+  font-size:.88rem;letter-spacing:.04em;box-shadow:0 6px 14px -6px rgba(14,116,144,.5);
+}
+.bio{color:var(--muted);font-size:.97rem;margin-top:14px}
+
+/* Open/closed badge */
+.status{
+  display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:7px 16px;border-radius:999px;
+  font-weight:700;font-size:.85rem;border:1px solid var(--line);background:var(--bg1);
+}
+.status .dot{width:10px;height:10px;border-radius:50%;background:var(--muted)}
+.status.open{color:var(--open)}
+.status.open .dot{background:var(--open);box-shadow:0 0 0 4px rgba(13,148,136,.18);animation:pulse 1.6s infinite}
+.status.closed{color:var(--closed)}
+.status.closed .dot{background:var(--closed)}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(13,148,136,.25)}50%{box-shadow:0 0 0 7px rgba(13,148,136,.08)}}
+
+/* Sections */
+.section{padding:14px 22px}
+.section h2{
+  font-size:1.05rem;margin-bottom:10px;color:var(--deep);font-weight:800;
+  display:flex;align-items:center;gap:10px;
+}
+.section h2::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--accent);flex:none}
+.section h2::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--line),transparent)}
+@media (prefers-color-scheme: dark){.section h2{color:var(--accent)}}
+
+/* Contact rows */
+.list{display:grid;gap:10px}
+.row{
+  display:flex;align-items:center;gap:14px;min-height:60px;padding:10px 12px;border-radius:18px;
+  background:var(--bg1);border:1px solid var(--line);color:inherit;text-decoration:none;
+  transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;
+}
+.row:hover{transform:translateY(-2px);box-shadow:0 12px 22px -14px rgba(14,116,144,.5);border-color:var(--accent)}
+.row:active{transform:scale(.98)}
+.ico{
+  flex:none;width:44px;height:44px;border-radius:50%;background:var(--accent-soft);color:var(--deep);
+  display:grid;place-items:center;font-size:1.1rem;border:1px solid var(--line);
+}
+.ico.emergency{background:#fde8ec;color:var(--closed);border-color:#fbd0d9}
+.txt{flex:1;min-width:0}
+.txt small{display:block;color:var(--muted);font-size:.78rem}
+.txt span{display:block;font-weight:600;overflow-wrap:anywhere}
+.copy{
+  flex:none;width:44px;height:44px;border:0;border-radius:50%;background:transparent;color:var(--muted);
+  font-size:1.05rem;cursor:pointer;transition:background .15s,color .15s;
+}
+.copy:hover{background:var(--line);color:var(--ink)}
+.copy.done{color:var(--open)}
+
+/* Hours table */
+.hours{background:var(--bg1);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.hrow{
+  display:flex;justify-content:space-between;align-items:center;padding:11px 16px;font-size:.93rem;
+  border-bottom:1px solid var(--line);
+}
+.hrow:last-child{border-bottom:0}
+.hrow .d{font-weight:600}
+.hrow .t{color:var(--muted);font-variant-numeric:tabular-nums}
+.hrow.today{background:var(--accent-soft)}
+.hrow.today .d{color:var(--deep);font-weight:800}
+.hrow.today .d::after{content:"• today";font-weight:600;font-size:.72rem;color:var(--deep2);margin-left:8px;letter-spacing:.05em;text-transform:uppercase}
+.hrow.closed-day .t{color:var(--closed)}
+
+/* Services grid */
+.services{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.svc{
+  display:flex;align-items:center;gap:10px;padding:12px;border-radius:16px;
+  background:var(--bg1);border:1px solid var(--line);font-size:.88rem;font-weight:600;
+}
+.svc i{
+  flex:none;width:36px;height:36px;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(150deg,var(--accent),var(--deep2));color:#fff;font-size:.95rem;
+}
+
+/* Booking form */
+.book{background:var(--bg1);border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:12px}
+.field{display:grid;gap:5px}
+.field label{font-size:.8rem;font-weight:700;color:var(--deep);text-transform:uppercase;letter-spacing:.06em}
+.field input,.field select{
+  font:inherit;padding:11px 14px;border-radius:12px;border:1px solid var(--line);
+  background:var(--paper);color:var(--ink);width:100%;
+}
+.field input:focus,.field select:focus{outline:2px solid var(--accent);outline-offset:1px}
+.fieldrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.book-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px;border-radius:999px;
+  font:inherit;font-weight:700;border:0;cursor:pointer;text-decoration:none;transition:transform .15s ease,filter .15s;
+  font-size:.95rem;
+}
+.btn:hover{filter:brightness(1.06);transform:translateY(-2px)}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:linear-gradient(120deg,var(--deep2),var(--accent));color:#fff;box-shadow:0 12px 20px -10px rgba(14,116,144,.6)}
+.btn.ghost{background:var(--paper);color:var(--deep);border:1.5px solid var(--deep2)}
+
+/* Socials */
+.socials{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.socials a{
+  width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;color:#fff;
+  background:linear-gradient(150deg,var(--deep2),var(--deep));text-decoration:none;
+  box-shadow:0 8px 16px -8px rgba(14,116,144,.6);transition:transform .15s ease,filter .15s;
+}
+.socials a:hover{transform:translateY(-3px) scale(1.06);filter:brightness(1.12)}
+.socials a:active{transform:scale(.94)}
+.socials a[data-p=facebook]:hover{background:#1877f2}
+.socials a[data-p=instagram]:hover{background:#d62976}
+.socials a[data-p=linkedin]:hover{background:#0a66c2}
+.socials a[data-p=github]:hover{background:#24292f}
+.socials a[data-p=tiktok]:hover{background:#000}
+.socials a[data-p=youtube]:hover{background:#e00}
+
+footer{text-align:center;color:var(--muted);font-size:.78rem;padding:10px 22px 26px}
+footer::before{content:"🦷";display:block;font-size:1.3rem;margin-bottom:6px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+#toast{
+  position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translate(-50%,20px);
+  background:var(--deep);color:#fff;padding:12px 18px;border-radius:999px;font-weight:600;font-size:.9rem;
+  opacity:0;pointer-events:none;transition:.25s;z-index:10;box-shadow:0 10px 20px -8px rgba(14,116,144,.6);
+}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+@media (max-width:360px){.book-actions,.fieldrow,.services{grid-template-columns:1fr}h1{font-size:1.4rem}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="hero" aria-hidden="true"></div>
+
+  <section class="profile">
+    <div class="avatar" id="avatar" role="img" aria-label="Profile picture"></div>
+    <h1 id="name"></h1>
+    <p class="title" id="title"></p>
+    <p class="bio" id="bio"></p>
+    <div class="status" id="status"><span class="dot"></span><span id="statusText">Checking hours…</span></div>
+  </section>
+
+  <section class="section" aria-labelledby="contact-h">
+    <h2 id="contact-h">Book an Appointment</h2>
+    <div class="list">
+      <div class="row">
+        <a id="phoneLink" class="row" style="border:0;background:none;padding:0;min-height:0;flex:1;box-shadow:none;transform:none">
+          <span class="ico"><i class="fas fa-phone" aria-hidden="true"></i></span>
+          <span class="txt"><small>Call the clinic</small><span id="phoneText"></span></span>
+        </a>
+        <button class="copy" id="copyPhone" aria-label="Copy phone number"><i class="far fa-copy" aria-hidden="true"></i></button>
+      </div>
+      <div class="row">
+        <a id="emailLink" class="row" style="border:0;background:none;padding:0;min-height:0;flex:1;box-shadow:none;transform:none">
+          <span class="ico"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+          <span class="txt"><small>Email us</small><span id="emailText"></span></span>
+        </a>
+        <button class="copy" id="copyEmail" aria-label="Copy email address"><i class="far fa-copy" aria-hidden="true"></i></button>
+      </div>
+      <div class="row">
+        <a id="smsLink" class="row" style="border:0;background:none;padding:0;min-height:0;flex:1;box-shadow:none;transform:none">
+          <span class="ico"><i class="fas fa-comment-sms" aria-hidden="true"></i></span>
+          <span class="txt"><small>Text us</small><span id="smsText"></span></span>
+        </a>
+        <button class="copy" id="copySms" aria-label="Copy SMS number"><i class="far fa-copy" aria-hidden="true"></i></button>
+      </div>
+      <a class="row" id="mapLink" target="_blank" rel="noopener noreferrer">
+        <span class="ico"><i class="fas fa-location-dot" aria-hidden="true"></i></span>
+        <span class="txt"><small>Clinic location — open in Maps</small><span id="locText"></span></span>
+      </a>
+      <a class="row" id="webLink" target="_blank" rel="noopener noreferrer">
+        <span class="ico"><i class="fas fa-globe" aria-hidden="true"></i></span>
+        <span class="txt"><small>Website / Services</small><span id="webText"></span></span>
+      </a>
+      <a class="row" id="emergencyLink" style="border-color:#fbd0d9;background:#fff5f7">
+        <span class="ico emergency"><i class="fas fa-truck-medical" aria-hidden="true"></i></span>
+        <span class="txt"><small style="color:var(--closed)">Dental emergency?</small><span style="color:var(--closed)">Call now — we prioritize urgent care</span></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="hours-h">
+    <h2 id="hours-h">Clinic Hours</h2>
+    <div class="hours" id="hoursList"></div>
+  </section>
+
+  <section class="section" aria-labelledby="services-h">
+    <h2 id="services-h">Our Services</h2>
+    <div class="services" id="servicesGrid"></div>
+  </section>
+
+  <section class="section" aria-labelledby="book-h">
+    <h2 id="book-h">Request a Slot</h2>
+    <form class="book" id="bookForm">
+      <div class="field">
+        <label for="bkName">Your name</label>
+        <input id="bkName" type="text" placeholder="Juan Dela Cruz" required>
+      </div>
+      <div class="field">
+        <label for="bkService">Service</label>
+        <select id="bkService" required></select>
+      </div>
+      <div class="fieldrow">
+        <div class="field">
+          <label for="bkDate">Date</label>
+          <input id="bkDate" type="date" required>
+        </div>
+        <div class="field">
+          <label for="bkTime">Time</label>
+          <input id="bkTime" type="time" required>
+        </div>
+      </div>
+      <div class="book-actions">
+        <button type="button" class="btn ghost" id="smsBook"><i class="fas fa-comment-sms" aria-hidden="true"></i> Text Request</button>
+        <button type="submit" class="btn primary"><i class="fas fa-calendar-plus" aria-hidden="true"></i> Add to Calendar</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="section" id="socialSec" aria-labelledby="social-h">
+    <h2 id="social-h">Follow Us</h2>
+    <div class="socials" id="socials"></div>
+  </section>
+
+  <section class="section">
+    <div class="actions">
+      <button class="btn primary" id="saveBtn" style="width:100%"><i class="fas fa-address-book" aria-hidden="true"></i> Save Clinic Contact</button>
+    </div>
+  </section>
+
+  <footer id="foot"></footer>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  const P = PROFILE, $ = id => document.getElementById(id);
+
+  // Fill text
+  $("name").textContent = P.name;
+  $("title").textContent = P.title;
+  $("bio").textContent = P.bio;
+  $("phoneText").textContent = P.phoneDisplay;
+  $("emailText").textContent = P.email;
+  $("smsText").textContent = P.phoneDisplay;
+  $("locText").textContent = P.location;
+  $("webText").textContent = P.website.replace(/^https?:\/\//,"");
+  $("foot").textContent = "© " + new Date().getFullYear() + " " + P.org;
+
+  // Avatar: photo or initials
+  const av = $("avatar");
+  if (P.photo) {
+    const img = new Image(); img.src = P.photo; img.alt = P.name + " profile picture";
+    img.onerror = () => { av.textContent = initials(); };
+    av.appendChild(img);
+  } else av.textContent = initials();
+  function initials(){ return (P.first[0] + P.last[0]).toUpperCase(); }
+
+  // Links
+  $("phoneLink").href = "tel:" + P.phoneRaw;
+  $("emailLink").href = "mailto:" + P.email;
+  $("smsLink").href = "sms:" + P.phoneRaw;
+  $("emergencyLink").href = "tel:" + P.phoneRaw;
+  $("mapLink").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(P.org + ", " + P.location);
+  $("webLink").href = P.website;
+
+  // ---- Clinic hours: build table + live open/closed status ----
+  const DAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const fmt = t => { let [h,m] = t.split(":").map(Number); const ap = h >= 12 ? "PM" : "AM"; h = h % 12 || 12; return h + ":" + String(m).padStart(2,"0") + " " + ap; };
+  const order = [1,2,3,4,5,6,0]; // Monday-first
+  const now = new Date(), today = now.getDay();
+  const list = $("hoursList");
+  order.forEach(d => {
+    const row = document.createElement("div");
+    row.className = "hrow" + (d === today ? " today" : "") + (P.hours[d] ? "" : " closed-day");
+    row.innerHTML = '<span class="d">' + DAYS[d] + '</span><span class="t">' +
+      (P.hours[d] ? fmt(P.hours[d][0]) + " – " + fmt(P.hours[d][1]) : "Closed") + '</span>';
+    list.appendChild(row);
+  });
+
+  function updateStatus(){
+    const s = P.hours[today], el = $("status"), txt = $("statusText");
+    const mins = now.getHours() * 60 + now.getMinutes();
+    if (s) {
+      const [o, c] = s.map(t => { const [h,m] = t.split(":").map(Number); return h*60+m; });
+      if (mins >= o && mins < c) {
+        el.className = "status open";
+        txt.textContent = "Open now · closes " + fmt(s[1]);
+        return;
+      }
+      el.className = "status closed";
+      txt.textContent = mins < o ? "Closed · opens today " + fmt(s[0]) : "Closed · opens " + (today === 6 ? "Monday" : "tomorrow") + " " + fmt((P.hours[(today+1)%7]||P.hours[1])[0]);
+      return;
+    }
+    el.className = "status closed";
+    txt.textContent = "Closed today · opens Monday " + fmt(P.hours[1][0]);
+  }
+  updateStatus();
+
+  // ---- Services grid + booking select ----
+  const grid = $("servicesGrid"), sel = $("bkService");
+  P.services.forEach(([icon, label]) => {
+    const d = document.createElement("div");
+    d.className = "svc";
+    d.innerHTML = '<i class="fas ' + icon + '" aria-hidden="true"></i><span>' + label + "</span>";
+    grid.appendChild(d);
+    const o = document.createElement("option"); o.value = o.textContent = label; sel.appendChild(o);
+  });
+
+  // Default booking date = today, min = today
+  const todayISO = now.toISOString().slice(0,10);
+  $("bkDate").min = todayISO; $("bkDate").value = todayISO;
+  $("bkTime").value = "10:00";
+
+  // ---- Booking: SMS request ----
+  $("smsBook").onclick = () => {
+    const n = $("bkName").value.trim(), svc = sel.value, d = $("bkDate").value, t = $("bkTime").value;
+    if (!n || !d || !t) { toast("Please fill in name, date and time"); return; }
+    const msg = "Hi " + P.org + "! I'd like to book an appointment.%0A%0AName: " + encodeURIComponent(n) +
+      "%0AService: " + encodeURIComponent(svc) + "%0ADate: " + d + "%0ATime: " + t;
+    window.location.href = "sms:" + P.phoneRaw + "?&body=" + msg;
+    toast("Opening SMS with your request…");
+  };
+
+  // ---- Booking: .ics calendar download ----
+  $("bookForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const n = $("bkName").value.trim(), svc = sel.value, d = $("bkDate").value, t = $("bkTime").value;
+    if (!n || !d || !t) { toast("Please fill in name, date and time"); return; }
+    const [Y,M,D] = d.split("-").map(Number), [h,m] = t.split(":").map(Number);
+    const pad = v => String(v).padStart(2,"0");
+    const stamp = (Y,M,D,h,m) => Y + pad(M) + pad(D) + "T" + pad(h) + pad(m) + "00";
+    const endH = Math.min(h+1, 23);
+    const ics = [
+      "BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//" + P.org + "//Booking//EN","BEGIN:VEVENT",
+      "UID:" + Date.now() + "@clinic",
+      "DTSTAMP:" + stamp(Y,M,D,h,m),
+      "DTSTART:" + stamp(Y,M,D,h,m),
+      "DTEND:" + stamp(Y,M,D,endH,m),
+      "SUMMARY:" + svc + " — " + P.org,
+      "DESCRIPTION:Booking for " + n.replace(/([,;\\])/g,"\\$1") + ". Please confirm with the clinic at " + P.phoneDisplay + ".",
+      "LOCATION:" + P.org + "\\, " + P.location.replace(/([,;\\])/g,"\\$1"),
+      "END:VEVENT","END:VCALENDAR"
+    ].join("\r\n");
+    const blob = new Blob([ics], {type:"text/calendar;charset=utf-8"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = "dental-appointment.ics";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+    toast("Reminder saved — open the file to add it");
+  });
+
+  // ---- Socials ----
+  const icons = {
+    facebook:["fab fa-facebook-f","Facebook"], instagram:["fab fa-instagram","Instagram"],
+    linkedin:["fab fa-linkedin-in","LinkedIn"], github:["fab fa-github","GitHub"],
+    tiktok:["fab fa-tiktok","TikTok"], youtube:["fab fa-youtube","YouTube"]
+  };
+  const box = $("socials");
+  const alwaysShow = ["facebook","instagram","tiktok","youtube"];
+  Object.keys(icons).forEach(k => {
+    const url = P.socials[k];
+    if (!url && !alwaysShow.includes(k)) return;
+    const a = document.createElement("a");
+    a.dataset.p = k; a.setAttribute("aria-label", icons[k][1] + " profile");
+    if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener noreferrer"; }
+    else { a.href = "#"; a.addEventListener("click", e => { e.preventDefault(); toast(icons[k][1] + " link not added yet"); }); }
+    a.innerHTML = '<i class="' + icons[k][0] + '" aria-hidden="true"></i>';
+    box.appendChild(a);
+  });
+  if (!box.children.length) $("socialSec").hidden = true;
+
+  // ---- Toast ----
+  let tmr; function toast(msg){
+    const el = $("toast"); el.textContent = msg; el.classList.add("show");
+    clearTimeout(tmr); tmr = setTimeout(() => el.classList.remove("show"), 2200);
+  }
+
+  // ---- Copy buttons ----
+  async function copy(text, btn, label){
+    try { await navigator.clipboard.writeText(text); }
+    catch(e){
+      const ta = document.createElement("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove();
+    }
+    btn.classList.add("done"); btn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i>';
+    toast(label + " copied");
+    setTimeout(() => { btn.classList.remove("done"); btn.innerHTML = '<i class="far fa-copy" aria-hidden="true"></i>'; }, 1800);
+  }
+  $("copyPhone").onclick = e => copy(P.phoneRaw, e.currentTarget, "Phone number");
+  $("copyEmail").onclick = e => copy(P.email, e.currentTarget, "Email");
+  $("copySms").onclick   = e => copy(P.phoneRaw, e.currentTarget, "SMS number");
+
+  // ---- vCard save ----
+  function buildVCard(){
+    const esc = s => String(s).replace(/([,;\\])/g,"\\$1").replace(/\n/g,"\\n");
+    return [
+      "BEGIN:VCARD","VERSION:3.0",
+      "N:" + esc(P.last) + ";" + esc(P.first) + ";;;",
+      "FN:" + esc(P.name),
+      "ORG:" + esc(P.org),
+      "TITLE:" + esc(P.title),
+      "TEL;TYPE=CELL:" + P.phoneRaw,
+      "EMAIL;TYPE=INTERNET:" + P.email,
+      "URL:" + P.website,
+      "ADR;TYPE=WORK:;;" + esc(P.location) + ";;;;",
+      "NOTE:" + esc("Clinic hours: Mon–Fri 9AM–5PM\\, Sat 9AM–2PM\\, Sun closed."),
+      "END:VCARD"
+    ].join("\r\n");
+  }
+  $("saveBtn").onclick = () => {
+    const blob = new Blob([buildVCard()], {type:"text/vcard;charset=utf-8"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = P.last + "_" + P.first.replace(/\s+/g,"_") + ".vcf";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+    toast("Contact file ready. Open it to save.");
+  };
+
+})();
+</script>
+</body>
+</html>
